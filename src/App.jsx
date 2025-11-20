@@ -1,71 +1,91 @@
+import React from 'react'
+import { Moon, Droplet, Dumbbell, Brain } from 'lucide-react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Section from './components/Section'
+import Adolescenti from './components/Adolescenti'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-slate-950 text-blue-50">
+      <Navbar />
+      <Hero />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
+      <main>
+        <Section
+          id="sonno"
+          icon={Moon}
+          title="1. Sonno di qualità"
+          color="violet"
+          points={[
+            'Regola orari costanti',
+            'Ambiente buio e fresco',
+            'Riduci gli schermi prima di dormire',
+          ]}
+          tips={[
+            'Vai a letto e svegliati alla stessa ora, anche nel weekend.',
+            'Mantieni la stanza tra 17-19°C e limita rumori e luci.',
+            'Evita caffeina dopo il primo pomeriggio; crea un rituale rilassante.',
+          ]}
+        />
 
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
+        <Section
+          id="idratazione"
+          icon={Droplet}
+          title="2. Idratazione"
+          color="blue"
+          points={[
+            'Acqua sempre con te',
+            'Più attività = più liquidi',
+            'Attenzione a zuccheri e caffeina',
+          ]}
+          tips={[
+            'Bevi a piccoli sorsi durante il giorno, non tutto insieme.',
+            'Aumenta l’introito in giornate calde o con sport intenso.',
+            'Preferisci acqua, tisane e frutta ricca d’acqua come arance o anguria.',
+          ]}
+        />
 
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
+        <Section
+          id="attivita"
+          icon={Dumbbell}
+          title="3. Attività fisica"
+          color="emerald"
+          points={[
+            'Almeno 150 min/sett. moderata',
+            'Forza 2-3 volte a settimana',
+            'Muoviti ogni ora',
+          ]}
+          tips={[
+            'Scegli attività che ti piacciono: bici, danza, sport di squadra.',
+            'Inserisci esercizi a corpo libero per forza e postura.',
+            'Usa le scale, cammina mentre telefoni, micro-pause attive.',
+          ]}
+        />
 
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
+        <Section
+          id="stress"
+          icon={Brain}
+          title="4. Gestione dello stress"
+          color="rose"
+          points={[
+            'Respirazione e mindfulness',
+            'Routine e priorità chiare',
+            'Comunità e supporto',
+          ]}
+          tips={[
+            'Pratica 4-7-8 o box breathing per calmare il sistema nervoso.',
+            'Pianifica la settimana, spezza i compiti in passi piccoli.',
+            'Parla con amici, famiglia o un professionista quando serve.',
+          ]}
+        />
 
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
+        <Adolescenti />
+      </main>
 
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
-        </div>
-      </div>
+      <footer className="py-10 text-center text-blue-200/70">
+        Creato con passione per il benessere — Rimani in movimento, idratato e sereno.
+      </footer>
     </div>
   )
 }
